@@ -1,0 +1,6 @@
+load("//packages:pkg.bzl", "pkg")
+
+pkg(
+    name = "b",
+    deps = ["//packages/a"],
+)

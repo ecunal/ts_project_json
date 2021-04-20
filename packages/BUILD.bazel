@@ -1,0 +1,10 @@
+load("@npm//@bazel/typescript:index.bzl", "ts_config")
+
+ts_config(
+    name = "base_tsconfig",
+    src = "tsconfig.json",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//tools/tsconfig:tsconfig_pkgs",
+    ],
+)

@@ -1,0 +1,7 @@
+load("@npm//@bazel/typescript:index.bzl", "ts_config")
+
+ts_config(
+    name = "tsconfig_pkgs",
+    src = "tsconfig.pkgs.json",
+    visibility = ["//packages:__subpackages__"],
+)

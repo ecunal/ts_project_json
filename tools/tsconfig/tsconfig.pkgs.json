@@ -1,0 +1,59 @@
+{
+    "include": [
+        "../../packages/**/*"
+    ],
+    "exclude": [
+        "../../build/private/tscOut/"
+    ],
+    "compilerOptions": {
+        "baseUrl": "../..",
+        "paths": {
+            "*": [
+                "packages/*",
+                "node_modules/*",
+                "node_modules/@types/*",
+
+                // https://bazelbuild.github.io/rules_nodejs/TypeScript.html#ts_project
+                "./bazel-out/darwin-fastbuild/bin/packages/*",
+                "./bazel-out/k8-fastbuild/bin/packages/*",
+                "./bazel-out/x64_windows-fastbuild/bin/packages/*",
+                "./bazel-out/darwin-dbg/bin/packages/*",
+                "./bazel-out/k8-dbg/bin/packages/*",
+                "./bazel-out/x64_windows-dbg/bin/packages/*"
+            ],
+
+            "packages/*": [
+                "./bazel-out/darwin-fastbuild/bin/packages/*",
+                "./bazel-out/k8-fastbuild/bin/packages/*",
+                "./bazel-out/x64_windows-fastbuild/bin/packages/*",
+                "./bazel-out/darwin-dbg/bin/packages/*",
+                "./bazel-out/k8-dbg/bin/packages/*",
+                "./bazel-out/x64_windows-dbg/bin/packages/*"
+            ]
+        },
+        "rootDirs": [
+            ".",
+            "../../bazel-out/host/bin",
+            "../../bazel-out/darwin-fastbuild/bin",
+            "../../bazel-out/k8-fastbuild/bin",
+            "../../bazel-out/x64_windows-fastbuild/bin",
+            "../../bazel-out/darwin-dbg/bin",
+            "../../bazel-out/k8-dbg/bin",
+            "../../bazel-out/x64_windows-dbg/bin"
+        ],
+        "outDir": "../../build/private/tscOut/",
+        "jsx": "react",
+        "lib": ["dom", "es5", "es2015.core", "es2015.promise", "es2015.collection", "es2015.iterable", "es2017.object", "es2018.promise"],
+        "module": "esNext",
+        "target": "es5",
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "declaration": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "esModuleInterop": true,
+        "downlevelIteration": true,
+        "moduleResolution": "Node",
+        "listFiles": true
+    }
+}
