@@ -2,4 +2,5 @@ load("//packages:pkg.bzl", "pkg")
 
 pkg(
     name = "a",
+    data = [ "values.json" ],
 )
